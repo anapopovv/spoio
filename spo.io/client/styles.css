@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow-x: hidden;
+    list-style: none;
+    font-family: mona;
+}
+
+@font-face {
+    font-family: 'mona';
+    src: url('/assets/Mona-Sans-Regular.ttf') format(truetype);
+}
+
+.cabeçalho {
+    display: flex;
+    background-color: #ffffff;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px 10px 30px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+}
+
+.nav-link {
+    font-size: 15px;
+    color: #141414;
+}
+
+.logo {
+    width: 40px;
+}
+
+.sec-um {
+    min-height: 150vh;
+    background-color: #ffffff;
+}

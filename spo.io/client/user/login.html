@@ -42,7 +42,7 @@
                         musicais personalizadas e a manter sua conta segura.
                     </p>
 
-                    <button>
+                    <button id="login-button">
                         <img class="btn-img" src="/spo.io/client/assets/logo-spotify.png" alt="Logo do Spotify">
                         Entre ou Cadastre-se
                     </button>
@@ -59,7 +59,11 @@
             </div>
         </section>
     </main>
-    
-    <script src="/spo.io/client/js/login.js"></script>
+
+    <script>
+        document.getElementById('login-button').addEventListener('click', () => {
+        window.location.href = '/feature/auth-logic/login';
+        });
+    </script>
 </body>
 </html>

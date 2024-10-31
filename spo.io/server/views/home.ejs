@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+</head>
+<body>
+    <h1>Bem-vindo, <%= userName ? userName : 'Usuário' %>!</h1>
+    <% if (userImage) { %>
+        <img src="<%= userImage %>" alt="Imagem do usuário" style="width: 100px; height: auto;">
+    <% } %>
+    <p>Acesse suas informações usando o token: <%= accessToken %></p>
+</body>
+</html>

@@ -1,0 +1,668 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    overflow-x: hidden;
+    list-style: none;
+    font-family: mona;
+}
+
+@font-face {
+    font-family: 'Mona';
+    src: url('/spo.io/client/assets/Mona-Sans-Regular.ttf') format(truetype);
+}
+
+section {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #f3f3f3;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-um-section {
+    min-height: 100vh;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    background-image: url(/spo.io/client/assets/background-login.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.div-um-section-texts {
+    width: 77%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 10px;
+}
+
+h1 {
+    color: #a7e6e8;
+    font-size: 3.1rem;
+}
+
+.div-um-section-texts p {
+    color: #a7e6e896;
+    font-size: 14px;
+    width: 90%;
+}
+
+.div-dois-section {
+    width: 50%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+    padding: 20px 20px 20px 25px;
+}
+
+.div-dois-section-start-logo {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 35px;
+}
+
+.div-dois-section-start-logo span {
+    color: #0d484b;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.div-dois-section-info-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+
+h2 {
+    color: #0d484b;
+    font-size: 25px;
+}
+
+.div-dois-section-info-btn p {
+    font-size: 16px;
+    color: #0b4042;
+    opacity: 70%;
+    width: 80%;
+}
+
+.div-dois-section-info-btn button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    width: 200px;
+    border-radius: 15px;
+    border: 2px solid #0d484b;
+    background-color: #0d484b;
+    gap: 10px;
+    font-size: 13px;
+    color: #f3f3f3;
+    font-weight: 100px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.div-dois-section-info-btn button:hover {
+    border: 2px solid #0d484b;
+    background-color: #f3f3f3;
+    color: #0d484b;
+    font-weight: bold;
+}
+
+.div-dois-section-info-btn button img {
+    width: 24px;
+    transition: opacity .3s;
+}
+
+.div-dois-section-info-btn button:hover .btn-img {
+    content: url('/spo.io/client/assets/logo-spotify-dois.png');
+}
+
+.div-dois-section-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.div-dois-section-footer ul {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.div-dois-section-footer ul li a {
+    font-size: 14px;
+    color: #0d484b;
+    opacity: 70%;
+    transition: .3s;
+}
+
+.div-dois-section-footer ul li a:hover {
+    opacity: 100%;
+}
+
+@media screen and (min-width: 50px) and (max-width: 149px) {
+    section {
+        min-height: 100vh;
+        flex-direction: column;
+    }
+    
+    .div-um-section {
+        min-height: 20vh;
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 15px;
+    }
+    
+    .div-um-section-texts {
+        width: 77%;
+    }
+    
+    h1 {
+        font-size: 0.8rem;
+    }
+    
+    .div-um-section-texts p {
+        font-size: 9px;
+    }
+    
+    .div-dois-section {
+        width: 100%;
+        min-height: 100vh;
+        padding: 15px 20px 20px 15px;
+    }
+    
+    .div-dois-section-start-logo {
+        gap: 7px;
+    }
+    
+    .logo {
+        width: 20px;
+    }
+    
+    .div-dois-section-start-logo span {
+        font-size: 14px;
+    }
+    
+    h2 {
+        font-size: 16px;
+    }
+
+    .div-dois-section-info-btn p {
+        font-size: 10px;
+        width: 100%;
+    }
+    
+    .div-dois-section-info-btn button img {
+        display: none;
+    }
+    
+    .div-dois-section-info-btn button {
+        width: 100%;
+        height: 40px;
+        font-size: 9px;
+    }
+
+    .div-dois-section-footer ul {
+        flex-direction: column;
+        gap: 15px;
+    } 
+    
+    .div-dois-section-footer ul li {
+        display: flex;
+        text-align: center;
+    }
+
+    .div-dois-section-footer ul li a {
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width: 150px) and (max-width: 179px) {
+    section {
+        min-height: 100vh;
+        flex-direction: column;
+    }
+    
+    .div-um-section {
+        min-height: 20vh;
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 15px;
+    }
+    
+    .div-um-section-texts {
+        width: 77%;
+    }
+    
+    h1 {
+        font-size: 1.2rem;
+    }
+    
+    .div-um-section-texts p {
+        font-size: 11px;
+    }
+    
+    .div-dois-section {
+        width: 100%;
+        min-height: 100vh;
+    }
+    
+    .div-dois-section-start-logo {
+        gap: 7px;
+    }
+    
+    .logo {
+        width: 27px;
+    }
+    
+    .div-dois-section-start-logo span {
+        font-size: 16px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+
+    .div-dois-section-info-btn p {
+        font-size: 12px;
+        width: 100%;
+    }
+    
+    .div-dois-section-info-btn button img {
+        display: none;
+    }
+    
+    .div-dois-section-info-btn button {
+        width: 100%;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .div-dois-section-footer ul {
+        flex-direction: column;
+        gap: 15px;
+    } 
+    
+    .div-dois-section-footer ul li {
+        display: flex;
+        text-align: center;
+    }
+
+    .div-dois-section-footer ul li a {
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width: 180px) and (max-width: 230px) {
+    section {
+        min-height: 100vh;
+        flex-direction: column;
+    }
+    
+    .div-um-section {
+        min-height: 20vh;
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 15px;
+        padding-left: 25px;
+        padding-right: 20px;
+        align-items: start;
+    }
+    
+    .div-um-section-texts {
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 1.2rem;
+    }
+    
+    .div-um-section-texts p {
+        font-size: 11px;
+    }
+    
+    .div-dois-section {
+        width: 100%;
+        min-height: 100vh;
+    }
+    
+    .div-dois-section-start-logo {
+        gap: 7px;
+    }
+    
+    .logo {
+        width: 27px;
+    }
+    
+    .div-dois-section-start-logo span {
+        font-size: 16px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+
+    .div-dois-section-info-btn p {
+        font-size: 12px;
+        width: 100%;
+    }
+    
+    .div-dois-section-info-btn button img {
+        display: none;
+    }
+    
+    .div-dois-section-info-btn button {
+        width: 100%;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .div-dois-section-footer ul {
+        flex-direction: column;
+        gap: 5px;
+    } 
+    
+    .div-dois-section-footer ul li a {
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width: 231px) and (max-width: 299px) {
+    section {
+        min-height: 100vh;
+        flex-direction: column;
+    }
+    
+    .div-um-section {
+        min-height: 20vh;
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 15px;
+        padding-left: 25px;
+        padding-right: 20px;
+        align-items: start;
+    }
+    
+    .div-um-section-texts {
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 1.2rem;
+    }
+    
+    .div-um-section-texts p {
+        font-size: 11px;
+    }
+    
+    .div-dois-section {
+        width: 100%;
+        min-height: 100vh;
+    }
+    
+    .div-dois-section-start-logo {
+        gap: 7px;
+    }
+    
+    .logo {
+        width: 27px;
+    }
+    
+    .div-dois-section-start-logo span {
+        font-size: 16px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+
+    .div-dois-section-info-btn p {
+        font-size: 12px;
+        width: 100%;
+    }
+    
+    .div-dois-section-info-btn button {
+        width: 100%;
+        height: 40px;
+        font-size: 12px;
+    }
+
+    .div-dois-section-footer ul {
+        flex-direction: column;
+        gap: 5px;
+    } 
+    
+    .div-dois-section-footer ul li a {
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width: 300px) and (max-width: 400px) {
+    section {
+        min-height: 100vh;
+        flex-direction: column;
+    }
+    
+    .div-um-section {
+        min-height: 20vh;
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 15px;
+        padding-left: 25px;
+        padding-right: 20px;
+        align-items: start;
+    }
+    
+    .div-um-section-texts {
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 1.2rem;
+    }
+    
+    .div-um-section-texts p {
+        font-size: 11px;
+    }
+    
+    .div-dois-section {
+        width: 100%;
+        min-height: 90vh;
+    }
+    
+    .div-dois-section-start-logo {
+        gap: 7px;
+    }
+    
+    .logo {
+        width: 27px;
+    }
+    
+    .div-dois-section-start-logo span {
+        font-size: 16px;
+    }
+    
+    h2 {
+        font-size: 20px;
+    }
+    
+    .div-dois-section-info-btn p {
+        font-size: 13px;
+        width: 100%;
+    }
+    
+    .div-dois-section-info-btn button {
+        width: 100%;
+    }
+    
+    .div-dois-section-footer ul li a {
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width: 401px) and (max-width: 600px) {
+    section {
+        min-height: 100vh;
+        flex-direction: column;
+    }
+    
+    .div-um-section {
+        min-height: 20vh;
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 15px;
+        padding-left: 25px;
+        padding-right: 20px;
+        align-items: start;
+    }
+    
+    .div-um-section-texts {
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 1.3rem;
+    }
+    
+    .div-um-section-texts p {
+        font-size: 12px;
+    }
+    
+    .div-dois-section {
+        width: 100%;
+        min-height: 100vh;
+    }
+    
+    .div-dois-section-start-logo {
+        gap: 7px;
+    }
+    
+    .logo {
+        width: 27px;
+    }
+    
+    .div-dois-section-start-logo span {
+        font-size: 16px;
+    }
+    
+    h2 {
+        font-size: 22px;
+    }
+    
+    .div-dois-section-info-btn p {
+        font-size: 14px;
+        width: 100%;
+    }
+    
+    .div-dois-section-info-btn button {
+        width: 100%;
+    }
+    
+    .div-dois-section-footer ul li a {
+        font-size: 12px;
+    }
+}
+
+@media screen and (min-width: 601px) and (max-width: 900px) { 
+    .div-um-section {
+        min-height: 100vh;
+        padding-top: 40px;
+    }
+    
+    h1 {
+        font-size: 1.9rem;
+    }
+    
+    .div-um-section-texts p {
+        font-size: 13px;
+    }
+    
+    .div-dois-section {
+        padding: 40px 20px 20px 25px;
+    }
+    
+    .logo {
+        width: 30px;
+    }
+    
+    .div-dois-section-start-logo span {
+        font-size: 16px;
+    }
+    
+    .div-dois-section-info-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 10px;
+    }
+    
+    h2 {
+        font-size: 22px;
+    }
+    
+    .div-dois-section-info-btn p {
+        font-size: 14px;
+        width: 100%;
+    }
+    
+    .div-dois-section-info-btn button {
+        height: 40px;
+        width: 180px;
+        font-size: 12px;
+    }
+    
+    .div-dois-section-footer ul li a {
+        font-size: 11px;
+    }
+}
+
+@media screen and (min-width: 901px) and (max-width: 1200px) {
+    .div-um-section {
+        min-height: 100vh;
+        padding-top: 40px;
+    }
+    
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    .div-dois-section {
+        padding: 40px 20px 20px 25px;
+    }
+    
+    .div-dois-section-info-btn p {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 1201px) and (max-width: 1400px) {
+    h1 {
+        font-size: 2.8rem;
+    }
+    
+    .div-dois-section-info-btn p {
+        width: 100%;
+    }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spo.io</title>
+    <link rel="stylesheet" href="/spo.io/client/components/header-not-logged.css">
+    <link rel="shortcut icon" href="/spo.io/client/assets/logo-um.png" type="image/x-icon">
+</head>
+<body>
+    <header class="cabeçalho">
+        <div class="div-start-cabeçalho">
+            <img class="logo" src="/spo.io/client/assets/logo-dois.png" alt="Logo da Spo.io">
+            <span>Spo.io</span>
+        </div>
+
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#" class="nav-link-a">Início</a></li>
+                <li class="nav-item"><a href="#" class="nav-link-a">Sobre</a></li>
+                <li class="nav-item"><a href="#" class="nav-link-a">Contato</a></li>
+                <li class="nav-item">
+                    <a href="/spo.io/client/user/login.html" class="nav-link-b">
+                        <img class="a-img" src="/spo.io/client/assets/logo-spotify.png" alt="Logo do Spotify">
+                        Entrar
+                    </a>
+                </li>
+            </ul>
+
+            <div class="hamburguer">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <script>
+        const hamburguer = document.querySelector(".hamburguer");
+        const navMenu = document.querySelector(".nav-menu");
+
+        hamburguer.addEventListener("click", () => {
+            hamburguer.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

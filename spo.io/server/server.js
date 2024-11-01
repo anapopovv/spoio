@@ -1,7 +1,12 @@
 require('dotenv').config({ path: require('path').resolve(__dirname, '../../.env') });
+
 const express = require('express');
+const cors = require('cors');
+const path = require('path');
 const authRouter = require('./routes/auth');
 const app = express();
+
+app.use(cors({ origin: 'http://127.0.0.1:5500' }));
 
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
@@ -13,6 +18,15 @@ if (!CLIENT_ID || !CLIENT_SECRET || !REDIRECT_URI) {
 }
 
 app.set('view engine', 'ejs');
+
+app.use(express.static(path.join(__dirname, '../client')));
+
+app.get('/config', (req, res) => {
+    res.json({
+        CLIENT_ID: process.env.CLIENT_ID,
+        REDIRECT_URI: process.env.REDIRECT_URI
+    });
+});
 
 app.use('/feature/auth-logic', authRouter);
 

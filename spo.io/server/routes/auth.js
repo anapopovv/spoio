@@ -11,9 +11,16 @@ if (!CLIENT_ID || !CLIENT_SECRET || !REDIRECT_URI) {
     throw new Error('As variáveis de ambiente CLIENT_ID, CLIENT_SECRET e REDIRECT_URI devem estar configuradas.');
 }
 
+router.get('/config', (req, res) => {
+    res.json({
+        CLIENT_ID: process.env.CLIENT_ID,
+        REDIRECT_URI: process.env.REDIRECT_URI,
+    });
+});
+
 router.get('/login', (req, res) => {
     const scopes = 'user-read-private user-read-email';
-    const authUrl = `https://accounts.spotify.com/authorize?response_type=code&client_id=${CLIENT_ID}&scope=${encodeURIComponent(scopes)}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}`;
+    const authUrl = `https://accounts.spotify.com/authorize?response_type=code&client_id=${CLIENT_ID}&scope=${encodeURIComponent(scopes)}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&show_dialog=true`;
     res.redirect(authUrl);
 });
 
@@ -48,16 +55,14 @@ router.get('/callback', async (req, res) => {
                 'Authorization': `Bearer ${accessToken}`
             }
         };
-
         const userResponse = await axios(userOptions);
-        
         console.log('Dados do usuário:', JSON.stringify(userResponse.data, null, 2));
+
         const userName = userResponse.data.display_name || 'Usuário';
         const userImage = userResponse.data.images?.[0]?.url || '';
-
         console.log('Nome do usuário:', userName);
         console.log('Imagem do usuário:', userImage);
-        
+
         res.redirect(`/home?access_token=${encodeURIComponent(accessToken)}&user_name=${encodeURIComponent(userName)}&user_image=${encodeURIComponent(userImage)}`);
     } catch (error) {
         if (error.response && error.response.status === 401) {

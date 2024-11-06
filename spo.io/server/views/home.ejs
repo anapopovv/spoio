@@ -3,13 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="shortcut icon" href="/assets/logo-um.png" type="image/x-icon">
+    <title>Spo.io | Perfil</title>
 </head>
 <body>
-    <h1>Bem-vindo, <%= userName ? userName : 'Usuário' %>!</h1>
-    <% if (userImage) { %>
-        <img src="<%= userImage %>" alt="Imagem do usuário" style="width: 100px; height: auto;">
-    <% } %>
-    <p>Acesse suas informações usando o token: <%= accessToken %></p>
+    <header class="cabeçalho">
+        <img class="logo" src="/assets/logo-um.png" alt="Logo da Spo.io">
+
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#">Página inicial</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Buscar artistas ou músicas</a>
+                </li>
+
+                <li class="nav-item">
+                    <a href="#">Superfãs</a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="#">Notificações</a>
+                </li>
+
+                <div class="hr-nav"></div>
+
+                <li class="nav-item">
+                    <a href="#">Sair da conta</a>
+                </li>
+            </ul>        
+
+            <div class="hamburguer">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section-um"></section>
+
+        <section class="section-dois">
+            <div class="sec-div-infos-perfil-btn">
+                <% if (userImage) { %>
+                    <img class="userImage" src="<%= userImage %>" alt="Imagem do usuário">
+                <% } %>
+
+                <div class="sec-div-infos-perfil-btn-div">
+                    <% if (userName) { %>
+                        <p class="userName"><%= userName %></p>
+                        <p class="userCountry"><%= userCountry %></p>
+                    <% } %>
+
+                    <button class="btnTimeArtist" id="btnTimeArtist">
+                        <img src="/assets/icone-relogio.png" alt="Icone relogio">
+                        Meu tempo com um artista
+                    </button>
+
+                    <button class="btnTrechos">
+                        <img src="/assets/icone-onda-sonora.png" alt="">
+                        Trechos musicais
+                    </button>
+
+                    <button class="btnTimeSpotify">
+                        <img src="/assets/icone-calendario.png" alt="Icone calendario">
+                        Meu tempo no Spotify
+                    </button>
+                </div>
+            </div>
+
+            <div id="modalTrechos" class="modal">
+                <div class="modal-content">
+                    <span class="close-btn">&times;</span>
+                    <h2>Selecione um trecho musical</h2>
+                    
+                    <!-- Barra de busca -->
+                    <input type="text" id="searchTrack" placeholder="Pesquise uma música...">
+<button id="searchButton">Buscar</button>
+
+<!-- Resultados da pesquisa -->
+<div id="trackResults"></div>
+
+<!-- Card do trecho musical -->
+<div id="selectedTrackCard" class="card" style="display: none;">
+    <img id="trackImage" alt="Imagem da música">
+    <div id="trackDetails">
+        <h3 id="trackName"></h3>
+        <p id="trackArtist"></p>
+    </div>
+    <button id="downloadCardButton">Baixar Imagem</button>
+</div>
+                </div>
+            </div>
+
+            <div class="tab-container">
+                <div class="tab-buttons">
+                  <button onclick="openTab('tab1')" class="active">Top artistas</button>
+                  <button onclick="openTab('tab2')">Top músicas</button>
+                  <button onclick="openTab('tab3')">Gerar nova playlist</button>
+                </div>
+              
+                <div id="tab1" class="tab-content active">
+                    <div class="div-tab">
+                        <h2>Top 10 artistas favoritos</h2>
+                        <div class="column">
+                            <% topArtists.forEach(artist => { %>
+                                <div class="row">
+                                    <img class="artistImage" src="<%= artist.imageUrl %>" alt="Foto do artista" class="artist-image">
+                                    <p class="artistName"><%= artist.name %></p>
+                                </div>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+              
+                <div id="tab2" class="tab-content">
+                    <div class="div-tab">
+                        <h2>Top 10 músicas favoritas</h2>
+                        <div class="column">
+                            <% topTracks.forEach(track => { %>
+                                <div class="row">
+                                    <img class="artistImage" src="<%= track.imageUrl %>" alt="Capa do álbum" class="track-image">
+                                    <p class="artistName"><%= track.name %> - <%= track.artistName %></p>
+                                </div>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+              
+                <div id="tab3" class="tab-content">
+                  <div class="div-tab-playlist-div">
+                    <div class="div-tab-playlist">
+                        <button class="gerarPlaylist">
+                            <img src="/assets/logo-spotify.png" alt="">
+                            Gerar nova playlist
+                        </button>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="div-um-footer">
+            <img class="logo-footer" src="/assets/logo-dois.png" alt="">
+            <div class="hr"></div>
+            <div class="div-ul-copy">
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Política de Privacidade</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
+
+                <p>© Todos os direitos reservados.</p>
+            </div>
+        </div>
+
+        <div class="div-dois-footer">
+            <div class="redes">
+                <a href="#"><img src="/assets/logo-github.png" alt="Logo Github"></a>
+                <a href="#"><img src="/assets/logo-instagram.png" alt="Logo Instagram"></a>
+                <a href="#"><img src="/assets/icone-website.png" alt="Simbolo para indicar site"></a>
+            </div>
+
+            <p>Suporte: anadev@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="/js/home.js"></script>
 </body>
 </html>

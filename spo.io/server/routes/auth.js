@@ -19,7 +19,7 @@ router.get('/config', (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    const scopes = 'user-read-private user-read-email';
+    const scopes = 'user-read-private user-read-email user-top-read user-read-recently-played';
     const authUrl = `https://accounts.spotify.com/authorize?response_type=code&client_id=${CLIENT_ID}&scope=${encodeURIComponent(scopes)}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&show_dialog=true`;
     res.redirect(authUrl);
 });
@@ -60,10 +60,31 @@ router.get('/callback', async (req, res) => {
 
         const userName = userResponse.data.display_name || 'Usuário';
         const userImage = userResponse.data.images?.[0]?.url || '';
-        console.log('Nome do usuário:', userName);
-        console.log('Imagem do usuário:', userImage);
 
-        res.redirect(`/home?access_token=${encodeURIComponent(accessToken)}&user_name=${encodeURIComponent(userName)}&user_image=${encodeURIComponent(userImage)}`);
+        const followers = userResponse.data.followers?.total || 0;
+        const following = userResponse.data.following_count || 0;
+
+        const topArtistsOptions = {
+            method: 'GET',
+            url: 'https://api.spotify.com/v1/me/top/artists',
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
+        };
+        const topArtistsResponse = await axios(topArtistsOptions);
+        const topArtists = topArtistsResponse.data.items.map(artist => artist.name).join(', ');
+
+        const topTracksOptions = {
+            method: 'GET',
+            url: 'https://api.spotify.com/v1/me/top/tracks',
+            headers: {
+                'Authorization': `Bearer ${accessToken}`
+            }
+        };
+        const topTracksResponse = await axios(topTracksOptions);
+        const topTracks = topTracksResponse.data.items.map(track => track.name).join(', ');
+
+        res.redirect(`/home?access_token=${encodeURIComponent(accessToken)}&user_name=${encodeURIComponent(userName)}&user_image=${encodeURIComponent(userImage)}&followers=${encodeURIComponent(followers)}&following=${encodeURIComponent(following)}`);
     } catch (error) {
         if (error.response && error.response.status === 401) {
             console.error('Token inválido ou expirado. Necessário autenticar novamente.');

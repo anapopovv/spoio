@@ -59,12 +59,12 @@
                         <p class="userCountry"><%= userCountry %></p>
                     <% } %>
 
-                    <button class="btnTimeArtist" id="btnTimeArtist">
-                        <img src="/assets/icone-relogio.png" alt="Icone relogio">
-                        Meu tempo com um artista
+                    <button class="btnNewArtist" id="recommendArtistBtn">
+                        <img src="/assets/icone-estrela.png" alt="Icone estrela">
+                        Explorar artistas novos
                     </button>
 
-                    <button class="btnTrechos">
+                    <button class="btnTrechos" id="openModalBtn">
                         <img src="/assets/icone-onda-sonora.png" alt="">
                         Trechos musicais
                     </button>
@@ -75,30 +75,7 @@
                     </button>
                 </div>
             </div>
-
-            <div id="modalTrechos" class="modal">
-                <div class="modal-content">
-                    <span class="close-btn">&times;</span>
-                    <h2>Selecione um trecho musical</h2>
-                    
-                    <!-- Barra de busca -->
-                    <input type="text" id="searchTrack" placeholder="Pesquise uma música...">
-<button id="searchButton">Buscar</button>
-
-<!-- Resultados da pesquisa -->
-<div id="trackResults"></div>
-
-<!-- Card do trecho musical -->
-<div id="selectedTrackCard" class="card" style="display: none;">
-    <img id="trackImage" alt="Imagem da música">
-    <div id="trackDetails">
-        <h3 id="trackName"></h3>
-        <p id="trackArtist"></p>
-    </div>
-    <button id="downloadCardButton">Baixar Imagem</button>
-</div>
-                </div>
-            </div>
+            
 
             <div class="tab-container">
                 <div class="tab-buttons">
@@ -147,6 +124,31 @@
                 </div>
             </div>
         </section>
+
+        <div id="recommendationModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+        
+                <div id="loadingScreen" class="loading-screen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+        
+                <div id="artistContent" style="display: none;">
+                    <div class="artistContentDiv">
+                        <h3 id="artistName"></h3>
+                        <img id="artistImage" src="" alt="Imagem do Artista">
+                        <p id="artistDescription"></p>
+                        <ul id="artistSongs"></ul>
+                        <button id="findAnotherArtistBtn">Explorar outro</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </main>
 
     <footer>

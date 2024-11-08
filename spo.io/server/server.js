@@ -7,6 +7,10 @@ const authRouter = require('./routes/auth');
 const app = express();
 const axios = require('axios');
 
+app.get('/artists', (req, res) => {
+  res.sendFile(path.join(__dirname, 'artists.json'));
+});
+
 app.use(cors({ origin: 'http://127.0.0.1:5500' }));
 
 const CLIENT_ID = process.env.CLIENT_ID;
@@ -83,7 +87,6 @@ app.get('/home', async (req, res) => {
         res.status(500).send('Erro ao obter dados do usuário');
     }
 });
-
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando na porta ${PORT}`);

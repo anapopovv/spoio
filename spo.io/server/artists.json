@@ -1,0 +1,232 @@
+[
+    {
+      "name": "Árstíðir",
+      "description": "Banda islandesa que mistura folk com elementos clássicos e harmonia vocal impressionante.",
+      "image": "/assets/arstioir.jpg", 
+      "songs": [
+        "Shades",
+        "Þér Ég Unni",
+        "Lover"
+      ]
+    },
+    {
+      "name": "Dan Deacon",
+      "description": "Artista americano que cria músicas eletrônicas experimentais e vibrantes.",
+      "image": "/assets/dandeacon.jpg", 
+      "songs": [
+        "Feel the Lightning",
+        "When I Was Done Dying",
+        "Learning to Relax"
+      ]
+    },
+    {
+      "name": "Samantha Crain",
+      "description": "Cantora americana que une indie folk com influências do country.",
+      "image": "/assets/samanthacrain.jpg", 
+      "songs": [
+        "Santa Fe",
+        "Elk City",
+        "For the Miner"
+      ]
+    },
+    {
+      "name": "Riverside",
+      "description": "Banda polonesa de rock progressivo, com fortes influências de Pink Floyd.",
+      "image": "/assets/riverside.jpg", 
+      "songs": [
+        "The Depth of Self-Delusion",
+        "Conceiving You",
+        "Out of Myself"
+      ]
+    },
+    {
+      "name": "Jessica Pratt",
+      "description": "Cantora e compositora americana com um estilo folk psicodélico suave.",
+      "image": "/assets/jessicapratt.jpg", 
+      "songs": [
+        "Back, Baby",
+        "Opening Night",
+        "Game That I Play"
+      ]
+    },
+    {
+      "name": "Mush",
+      "description": "Banda britânica de indie rock com uma pegada experimental e letras introspectivas.",
+      "image": "/assets/mush.jpg", 
+      "songs": [
+        "Alternative Facts",
+        "Eat the Etiquette",
+        "Existential Dread"
+      ]
+    },
+    {
+      "name": "Sharon Van Etten",
+      "description": "Cantora americana que mistura indie rock com atmosferas melancólicas.",
+      "image": "/assets/sharonvanetten.jpg", 
+      "songs": [
+        "Seventeen",
+        "Every Time the Sun Comes Up",
+        "Your Love Is Killing Me"
+      ]
+    },
+    {
+      "name": "Lankum",
+      "description": "Banda irlandesa que faz uma fusão de folk tradicional com post-punk.",
+      "image": "/assets/lankum.jpg", 
+      "songs": [
+        "The Wild Rover",
+        "What Will We Do When We Have No Money?",
+        "Bear Creek"
+      ]
+    },
+    {
+      "name": "M83",
+      "description": "Artista francês conhecido por suas músicas de ambient pop e synthwave.",
+      "image": "/assets/m83.jpg", 
+      "songs": [
+        "Midnight City",
+        "Wait",
+        "Reunion"
+      ]
+    },
+    {
+      "name": "Giant Rooks",
+      "description": "Banda alemã de indie pop com elementos de rock alternativo e folk.",
+      "image": "/assets/giantrooks.jpg", 
+      "songs": [
+        "Watershed",
+        "Wild Stare",
+        "Bright Lies"
+      ]
+    },
+    {
+      "name": "Soko",
+      "description": "Cantora francesa com um estilo alternativo e indie, com letras emotivas.",
+      "image": "/assets/soko.jpeg", 
+      "songs": [
+        "We Might Be Dead by Tomorrow",
+        "First Love Never Die",
+        "I Thought I Was an Alien"
+      ]
+    },
+    {
+      "name": "Oh Wonder",
+      "description": "Duo britânico que mistura pop eletrônico com toques de R&B.",
+      "image": "/assets/ohwonder.jpg", 
+      "songs": [
+        "Drive",
+        "Without You",
+        "Lose It"
+      ]
+    },
+    {
+      "name": "Snail Mail",
+      "description": "Artista americana que faz indie rock introspectivo e cheio de vulnerabilidade.",
+      "image": "/assets/snailmail.jpg", 
+      "songs": [
+        "Pristine",
+        "Speaking Terms",
+        "Heat Wave"
+      ]
+    },
+    {
+      "name": "Jade Bird",
+      "description": "Cantora e compositora britânica com um estilo folk e pop contemporâneo, conhecida por sua poderosa voz e letras autênticas.",
+      "image": "/assets/jadebird.jpg",
+      "songs": [
+        "Lottery",
+        "I Get No Joy",
+        "Uh Huh"
+      ]
+    },
+    {
+      "name": "Temples",
+      "description": "Banda britânica de rock psicodélico com influências dos anos 60, conhecida por seus arranjos ricos e atmosferas psicodélicas.",
+      "image": "/assets/temples.jpeg",
+      "songs": [
+        "Shelter Song",
+        "Keep in the Dark",
+        "Certainty"
+      ]
+    },
+    {
+      "name": "Balthazar",
+      "description": "Banda belga de indie rock, com influências de pop, psicodelia e soul.",
+      "image": "/assets/balthazar.jpg",
+      "songs": [
+        "Fever",
+        "Bunker",
+        "Entertainment"
+      ]
+    },
+    {
+      "name": "Crumb",
+      "description": "Banda de indie rock experimental de Nova York, com uma mistura de psicodelia, jazz e rock alternativo.",
+      "image": "/assets/crumb.jpg",
+      "songs": [
+        "Locket",
+        "Ghostride",
+        "Plants"
+      ]
+    },
+    {
+      "name": "The Amazing",
+      "description": "Banda sueca que mistura rock psicodélico com elementos de folk e jazz.",
+      "image": "/assets/theamazing.jpeg",
+      "songs": [
+        "Picture You",
+        "Ambulance",
+        "Safe Island"
+      ]
+    },
+    {
+      "name": "The Weather Station",
+      "description": "Projeto da cantora e compositora Tamara Lindeman, com uma mistura de folk, country e indie.",
+      "image": "/assets/theweatherstation.jpg",
+      "songs": [
+        "Thirty",
+        "Tapes",
+        "Kept It All to Myself"
+      ]
+    },
+    {
+      "name": "Cigarettes After Sex",
+      "description": "Banda americana conhecida por sua sonoridade suave e etérea, com letras que falam sobre amor e melancolia.",
+      "image": "/assets/cigarettesaftexsex.jpg",
+      "songs": [
+        "Apocalypse",
+        "Nothing’s Gonna Hurt You Baby",
+        "Sweet"
+      ]
+    },
+    {
+      "name": "Michael Kiwanuka",
+      "description": "Cantor e compositor britânico de soul e folk, com uma mistura de influências de música negra e rock.",
+      "image": "/assets/michaelkiwanuka.jpg",
+      "songs": [
+        "Cold Little Heart",
+        "Love & Hate",
+        "Home Again"
+      ]
+    },
+    {
+      "name": "King Princess",
+      "description": "Artista americana de pop alternativo, com letras que exploram questões de identidade e relacionamentos.",
+      "image": "/assets/kingprincess.jpg",
+      "songs": [
+        "1950",
+        "Talia",
+        "Pussy is God"
+      ]
+    },
+    {
+      "name": "The Japanese House",
+      "description": "Projeto britânico de Amber Bain, conhecida por seu som etéreo e experimental, com elementos de indie pop e eletrônica.",
+      "image": "/assets/thejapanesehouse.jpg",
+      "songs": [
+        "Saw You in a Dream",
+        "Lilo",
+        "Face Like Thunder"
+      ]
+    }
+  ]  

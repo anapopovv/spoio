@@ -1,16 +1,70 @@
 function openTab(tabId) {
-    // Esconder todo o conteúdo das abas
     const tabContents = document.querySelectorAll('.tab-content');
     tabContents.forEach(content => content.classList.remove('active'));
 
-    // Remover a classe "active" de todos os botões
     const tabButtons = document.querySelectorAll('.tab-buttons button');
     tabButtons.forEach(button => button.classList.remove('active'));
 
-    // Mostrar o conteúdo da aba clicada
     document.getElementById(tabId).classList.add('active');
 
-    // Adicionar a classe "active" ao botão da aba ativa
     event.currentTarget.classList.add('active');
-  }
+}
 
+document.addEventListener('DOMContentLoaded', () => {
+    const recommendBtn = document.getElementById('recommendArtistBtn');
+    const recommendationModal = document.getElementById('recommendationModal');
+    const span = document.getElementsByClassName('close')[0];
+    const findAnotherArtistBtn = document.getElementById('findAnotherArtistBtn'); 
+  
+    recommendBtn.addEventListener('click', () => {
+      recommendationModal.style.display = 'block';
+      loadArtist(); 
+    });
+  
+    span.addEventListener('click', () => {
+      recommendationModal.style.display = 'none';
+    });
+  
+    window.addEventListener('click', (event) => {
+      if (event.target === recommendationModal) {
+        recommendationModal.style.display = 'none';
+      }
+    });
+  
+    function loadArtist() {
+      document.getElementById('loadingScreen').style.display = 'flex';
+      document.getElementById('artistContent').style.display = 'none';
+  
+      fetch('/artists')
+        .then(response => response.json())
+        .then(data => {
+          const randomIndex = Math.floor(Math.random() * data.length);
+          const artist = data[randomIndex];
+  
+          setTimeout(() => {
+            document.getElementById('artistName').innerText = artist.name;
+            document.getElementById('artistDescription').innerText = artist.description;
+            document.getElementById('artistImage').src = artist.image;
+  
+            const songsList = document.getElementById('artistSongs');
+            songsList.innerHTML = '';
+            artist.songs.forEach(song => {
+              const li = document.createElement('li');
+              li.innerText = song;
+              songsList.appendChild(li);
+            });
+  
+            document.getElementById('loadingScreen').style.display = 'none';
+            document.getElementById('artistContent').style.display = 'block';
+          }, 2000); 
+        })
+        .catch(error => {
+          console.error('Erro ao carregar os dados do artista:', error);
+          document.getElementById('loadingScreen').style.display = 'none';
+        });
+    }
+  
+    findAnotherArtistBtn.addEventListener('click', () => {
+      loadArtist(); 
+    });
+});     

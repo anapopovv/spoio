@@ -64,9 +64,9 @@
                         Explorar artistas novos
                     </button>
 
-                    <button class="btnTrechos" id="openModalBtn">
-                        <img src="/assets/icone-onda-sonora.png" alt="">
-                        Trechos musicais
+                    <button class="btnPodcast" id="recommendPodcastBtn">
+                        <img src="/assets/icone-onda-sonora.png" alt="Icone ondas sonoras">
+                        Explorar podcasts
                     </button>
 
                     <button class="btnTimeSpotify">
@@ -149,6 +149,29 @@
             </div>
         </div>
         
+        <div id="podcastRecommendationModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+        
+                <div id="LoadingScreen" class="loading-screen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+        
+                <div id="podcastContent" style="display: none;">
+                    <div class="podcastContentDiv">
+                        <h3 id="podcastTitle"></h3>
+                        <img id="podcastImage" src="" alt="Imagem do Podcast">
+                        <p id="podcastDescription"></p>
+                        <ul id="podcastEpisodes"></ul>
+                        <button id="findAnotherPodcastBtn">Explorar outro</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>

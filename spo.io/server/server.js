@@ -11,6 +11,10 @@ app.get('/artists', (req, res) => {
   res.sendFile(path.join(__dirname, 'artists.json'));
 });
 
+app.get('/podcasts', (req, res) => {
+    res.sendFile(path.join(__dirname, 'podcasts.json'));
+});
+
 app.use(cors({ origin: 'http://127.0.0.1:5500' }));
 
 const CLIENT_ID = process.env.CLIENT_ID;

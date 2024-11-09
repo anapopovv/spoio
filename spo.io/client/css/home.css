@@ -161,33 +161,6 @@
     width: 17px;
 }
 
-.btnTimeSpotify {
-    height: 40px;
-    width: 210px;
-    display: flex;
-    align-items: center;
-    padding-left: 15px;
-    gap: 5px;
-    border-radius: 15px;
-    border: 1px solid #0d484bb7;
-    background-color: #cae9de;
-    font-size: 12px;
-    color: #0d484bb9;
-    outline: none;
-    cursor: pointer;
-    transition: .3s;
-    font-weight: bold;
-}
-
-.btnTimeSpotify:hover {
-    border: 1px solid #0d484b;
-    color: #0d484b;
-}
-
-.btnTimeSpotify img {
-    width: 17px;
-}
-
 .tab-container {
     display: flex;
     flex-direction: column;

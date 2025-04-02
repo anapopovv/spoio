@@ -519,11 +519,6 @@ h3 {
     background-color: #093436;
 }
 
-
-
-
-
-
 footer {
     min-height: 15vh;
     background-color: #0d484b;
@@ -542,15 +537,8 @@ footer {
 }
 
 .logo-footer {
-    width: 40px;
-    height: 40px;
+    width: 32px;
     opacity: 70%;
-}
-
-.div-um-footer span {
-    font-size: 1.7rem;
-    font-weight: bold;
-    color: #f3f3f3;
 }
 
 .hr {
@@ -624,10 +612,6 @@ footer {
     font-size: 14px;
     opacity: 70%;
 }
-
-
-
-
 
 
 

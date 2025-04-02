@@ -20,7 +20,7 @@
                 <div class="hr-nav"></div>
 
                 <li class="nav-item">
-                    <a href="#">Sair da conta</a>
+                    <a href="javascript:void(0);" id="logout-button">Sair da conta</a>
                 </li>
             </ul>        
 
@@ -61,9 +61,9 @@
 
             <div class="tab-container">
                 <div class="tab-buttons">
-                  <button onclick="openTab('tab1')" class="active">Top artistas</button>
-                  <button onclick="openTab('tab2')">Top músicas</button>
-                  <button onclick="openTab('tab3')">Gerar nova playlist</button>
+                    <button data-tab="tab1" onclick="openTab('tab1')" class="active">Top artistas</button>
+                    <button data-tab="tab2" onclick="openTab('tab2')">Top músicas</button>
+                    <button data-tab="tab3" onclick="openTab('tab3')">Gerar nova playlist</button>
                 </div>
               
                 <div id="tab1" class="tab-content active">
@@ -158,13 +158,14 @@
 
     <footer>
         <div class="div-um-footer">
-            <img class="logo-footer" src="/assets/logo-dois.png" alt="">
+            <img class="logo-footer" src="assets/logo-dois.png" alt="Logo spo.io">
             <div class="hr"></div>
             <div class="div-ul-copy">
                 <ul>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Política de Privacidade</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <li><a href="/index.html">Início</a></li>
+                    <li><a href="/pages/sobre.html">Sobre</a></li>
+                    <li><a href="/pages/politica.html">Política de Privacidade</a></li>
+                    <li><a href="/pages/contato.html">Contato</a></li>
                 </ul>
 
                 <p>© Todos os direitos reservados.</p>
@@ -173,15 +174,13 @@
 
         <div class="div-dois-footer">
             <div class="redes">
-                <a href="#"><img src="/assets/logo-github.png" alt="Logo Github"></a>
-                <a href="#"><img src="/assets/logo-instagram.png" alt="Logo Instagram"></a>
-                <a href="#"><img src="/assets/icone-website.png" alt="Simbolo para indicar site"></a>
+                <a href="https://github.com/anapopovv"><img src="assets/logo-github.png" alt="Logo Github"></a>
             </div>
 
-            <p>Suporte: anadev@gmail.com</p>
+            <p>Suporte: anadev38@gmail.com</p>
         </div>
     </footer>
 
-    <script src="/js/home.js"></script>
+    <script src="/js/home.js" defer></script>
 </body>
 </html>

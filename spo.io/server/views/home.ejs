@@ -3,13 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Inicial</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="shortcut icon" href="/assets/logo-um.png" type="image/x-icon">
+    <title>Spo.io | Perfil</title>
 </head>
 <body>
-    <h1>Bem-vindo, <%= userName ? userName : 'Usuário' %>!</h1>
-    <% if (userImage) { %>
-        <img src="<%= userImage %>" alt="Imagem do usuário" style="width: 100px; height: auto;">
-    <% } %>
-    <p>Acesse suas informações usando o token: <%= accessToken %></p>
+    <header class="cabeçalho">
+        <img class="logo" src="/assets/logo-um.png" alt="Logo da Spo.io">
+
+        <nav>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#">Perfil</a>
+                </li>
+
+                <div class="hr-nav"></div>
+
+                <li class="nav-item">
+                    <a href="javascript:void(0);" id="logout-button">Sair da conta</a>
+                </li>
+            </ul>        
+
+            <div class="hamburguer">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="section-um"></section>
+
+        <section class="section-dois">
+            <div class="sec-div-infos-perfil-btn">
+                <% if (userImage) { %>
+                    <img class="userImage" src="<%= userImage %>" alt="Imagem do usuário">
+                <% } %>
+
+                <div class="sec-div-infos-perfil-btn-div">
+                    <% if (userName) { %>
+                        <p class="userName"><%= userName %></p>
+                        <p class="userCountry"><%= userCountry %></p>
+                    <% } %>
+
+                    <button class="btnNewArtist" id="recommendArtistBtn">
+                        <img src="/assets/icone-estrela.png" alt="Icone estrela">
+                        Explorar artistas novos
+                    </button>
+
+                    <button class="btnPodcast" id="recommendPodcastBtn">
+                        <img src="/assets/icone-onda-sonora.png" alt="Icone ondas sonoras">
+                        Explorar podcasts
+                    </button>
+                </div>
+            </div>           
+
+            <div class="tab-container">
+                <div class="tab-buttons">
+                    <button data-tab="tab1" onclick="openTab('tab1')" class="active">Top artistas</button>
+                    <button data-tab="tab2" onclick="openTab('tab2')">Top músicas</button>
+                    <button data-tab="tab3" onclick="openTab('tab3')">Gerar nova playlist</button>
+                </div>
+              
+                <div id="tab1" class="tab-content active">
+                    <div class="div-tab">
+                        <h2>Top 10 artistas favoritos</h2>
+                        <div class="column">
+                            <% topArtists.forEach(artist => { %>
+                                <div class="row">
+                                    <img class="artistImage" src="<%= artist.imageUrl %>" alt="Foto do artista" class="artist-image">
+                                    <p class="artistName"><%= artist.name %></p>
+                                </div>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+              
+                <div id="tab2" class="tab-content">
+                    <div class="div-tab">
+                        <h2>Top 10 músicas favoritas</h2>
+                        <div class="column">
+                            <% topTracks.forEach(track => { %>
+                                <div class="row">
+                                    <img class="artistImage" src="<%= track.imageUrl %>" alt="Capa do álbum" class="track-image">
+                                    <p class="artistName"><%= track.name %> - <%= track.artistName %></p>
+                                </div>
+                            <% }); %>
+                        </div>
+                    </div>
+                </div>
+              
+                <div id="tab3" class="tab-content">
+                  <div class="div-tab-playlist-div">
+                    <div class="div-tab-playlist">
+                        <button class="gerarPlaylist">
+                            <img src="/assets/logo-spotify.png" alt="">
+                            Gerar nova playlist
+                        </button>
+                      </div>
+                  </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="recommendationModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+        
+                <div id="loadingScreen" class="loading-screen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+        
+                <div id="artistContent" style="display: none;">
+                    <div class="artistContentDiv">
+                        <h3 id="artistName"></h3>
+                        <img id="artistImage" src="" alt="Imagem do Artista">
+                        <p id="artistDescription"></p>
+                        <ul id="artistSongs"></ul>
+                        <button id="findAnotherArtistBtn">Explorar outro</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="podcastRecommendationModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+        
+                <div id="LoadingScreen" class="loading-screen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+        
+                <div id="podcastContent" style="display: none;">
+                    <div class="podcastContentDiv">
+                        <h3 id="podcastTitle"></h3>
+                        <img id="podcastImage" src="" alt="Imagem do Podcast">
+                        <p id="podcastDescription"></p>
+                        <ul id="podcastEpisodes"></ul>
+                        <button id="findAnotherPodcastBtn">Explorar outro</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="div-um-footer">
+            <img class="logo-footer" src="assets/logo-dois.png" alt="Logo spo.io">
+            <div class="hr"></div>
+            <div class="div-ul-copy">
+                <ul>
+                    <li><a href="/index.html">Início</a></li>
+                    <li><a href="/pages/sobre.html">Sobre</a></li>
+                    <li><a href="/pages/politica.html">Política de Privacidade</a></li>
+                    <li><a href="/pages/contato.html">Contato</a></li>
+                </ul>
+
+                <p>© Todos os direitos reservados.</p>
+            </div>
+        </div>
+
+        <div class="div-dois-footer">
+            <div class="redes">
+                <a href="https://github.com/anapopovv"><img src="assets/logo-github.png" alt="Logo Github"></a>
+            </div>
+
+            <p>Suporte: anadev38@gmail.com</p>
+        </div>
+    </footer>
+
+    <script src="/js/home.js" defer></script>
 </body>
 </html>

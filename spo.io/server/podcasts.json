@@ -1,0 +1,221 @@
+[
+    {
+        "title": "Café da Manhã",
+        "description": "Podcast da Folha com análises rápidas sobre as principais notícias do dia.",
+        "image": "/assets/cafedamanha.jpg",
+        "episodes": [
+            "As Eleições no Brasil", 
+            "A Volta às Aulas na Pandemia", 
+            "Como a Vacinação Acelerou no País"
+        ]
+    },
+    {
+        "title": "Mamilos",
+        "description": "Jornalismo de peito aberto com Ju Wallauer e Cris Bartis, discutindo temas controversos.",
+        "image": "/assets/mamilos.jpg",
+        "episodes": [
+            "Empatia em Tempos Difíceis", 
+            "O Brasil Pós-Pandemia", 
+            "Mulheres no Poder"
+        ]
+    },
+    {
+        "title": "Naruhodo",
+        "description": "Podcast de ciência que responde a perguntas curiosas com o Dr. Altay de Souza e Ken Fujioka.",
+        "image": "/assets/naruhodo.png",
+        "episodes": [
+            "O Que é Inteligência Artificial?", 
+            "Como o Cérebro Lida com o Medo?", 
+            "O Efeito da Música no Humor"
+        ]
+    },
+    {
+        "title": "História Preta",
+        "description": "Podcast sobre a história e a cultura negra no Brasil e no mundo.",
+        "image": "/assets/historiapreta.jpg",
+        "episodes": [
+            "A Revolta dos Malês", 
+            "Zumbi dos Palmares", 
+            "O Movimento Hip-Hop no Brasil"
+        ]
+    },
+    {
+        "title": "Projeto Humanos",
+        "description": "Contando histórias reais em formato de série, como o caso Evandro.",
+        "image": "/assets/projetohumanos.jpg",
+        "episodes": [
+            "O Caso Evandro: Parte 1", 
+            "O Caso Evandro: Parte 2", 
+            "O Caso Evandro: Conclusão"
+        ]
+    },
+    {
+        "title": "Durma com Essa",
+        "description": "Análises sobre os principais acontecimentos do dia com profundidade.",
+        "image": "/assets/durmacomessa.jpg",
+        "episodes": [
+            "A Reforma Tributária", 
+            "Crise na Educação", 
+            "O Futuro do Trabalho Remoto"
+        ]
+    },
+    {
+        "title": "Autoconsciente",
+        "description": "Reflexões sobre bem-estar e desenvolvimento pessoal.",
+        "image": "/assets/autoconsciente.jpg",
+        "episodes": [
+            "Lidando com o Estresse", 
+            "A Busca por Equilíbrio", 
+            "Aceitando as Mudanças"
+        ]
+    },
+    {
+        "title": "Modus Operandi",
+        "description": "Podcast de crimes reais, apresentando casos assustadores e misteriosos.",
+        "image": "/assets/modusoperandi.jpg",
+        "episodes": [
+            "Caso Von Richthofen", 
+            "Assassinatos em Série no Brasil", 
+            "Crimes Sem Solução"]
+    },
+    {
+        "title": "O Assunto",
+        "description": "Podcast diário do G1 com análises dos fatos do momento.",
+        "image": "/assets/oassunto.jpg",
+        "episodes": [
+            "Eleições Municipais", 
+            "A Pandemia e a Educação", 
+            "A Crise Ambiental"
+        ]
+    },
+    {
+        "title": "Braincast",
+        "description": "Podcast sobre criatividade, inovação e negócios.",
+        "image": "/assets/braincast.jpg",
+        "episodes": [
+            "A Nova Economia Digital", 
+            "O Futuro das Redes Sociais", 
+            "Marketing de Influência"
+        ]
+    },
+    {
+        "title": "Bom Dia, Obvious",
+        "description": "Reflexões sobre feminismo, comportamento e vida cotidiana.",
+        "image": "/assets/bomdiaobvious.jpg",
+        "episodes": [
+            "Autoestima e Redes Sociais", 
+            "Empoderamento Feminino", 
+            "A Vida no Século 21"
+        ]
+    },
+    {
+        "title": "Papo de Política",
+        "description": "Jornalistas da Globo analisam o cenário político brasileiro.",
+        "image": "/assets/papodepolitica.jpg",
+        "episodes": [
+            "A Corrida Eleitoral", 
+            "Os Bastidores do Governo", 
+            "Perspectivas para o Futuro do Brasil"
+        ]
+    },
+    {
+        "title": "Que História É Essa, Porchat?",
+        "description": "Fábio Porchat convida pessoas para contarem histórias engraçadas e inusitadas.",
+        "image": "/assets/quehistoriaeessaporchat.jpg",
+        "episodes": [
+            "História de Carnaval", 
+            "A Festa Surreal", 
+            "O Dia em que Tudo Deu Errado"
+        ]
+    },
+    {
+        "title": "Imagina Juntas",
+        "description": "Bate-papo sobre vida adulta, relacionamentos e autoestima.",
+        "image": "/assets/imaginajuntas.jpg",
+        "episodes": [
+            "Independência Financeira", 
+            "Relacionamentos na Era Digital", 
+            "Ansiedade na Vida Moderna"
+        ]
+    },
+    {
+        "title": "The Joe Rogan Experience",
+        "description": "Conversas com celebridades e especialistas sobre temas variados.",
+        "image": "/assets/thejoeroganexperience.jpg",
+        "episodes": [
+            "Elon Musk on SpaceX", 
+            "Edward Snowden on Privacy", 
+            "Bernie Sanders on Politics"
+        ]
+    },
+    {
+        "title": "Stuff You Should Know",
+        "description": "Explicando curiosidades e fatos sobre o mundo.",
+        "image": "/assets/stuffyoushouldknow.jpg",
+        "episodes": [
+            "How Currency Works", 
+            "The Secrets of Happiness", 
+            "The Power of Meditation"
+        ]
+    },
+    {
+        "title": "Freakonomics Radio",
+        "description": "Explorando o lado oculto da economia e ciências sociais.",
+        "image": "/assets/freakonomicsradio.jpg",
+        "episodes": [
+            "Economics of Love", 
+            "Why We Save Money", 
+            "The Data Behind Happiness"
+        ]
+    },
+    {
+        "title": "Radiolab",
+        "description": "Histórias que combinam ciência, filosofia e humanidade.",
+        "image": "/assets/radiolab.jpg",
+        "episodes": [
+            "The Wonder of Time", 
+            "Exploring the Cosmos", 
+            "The Mystery of Memory"
+        ]
+    },
+    {
+        "title": "My Favorite Murder",
+        "description": "Podcast de crimes reais com uma abordagem humorística.",
+        "image": "/assets/myfavoritemurder.jpg",
+        "episodes": [
+            "The Black Dahlia Murder", 
+            "The Zodiac Killer", 
+            "Ted Bundy"
+        ]
+    },
+    {
+        "title": "The Daily",
+        "description": "As principais notícias do dia pelo The New York Times.",
+        "image": "/assets/thedaily.jpg",
+        "episodes": [
+            "Elections in America", 
+            "COVID-19 Updates", 
+            "Climate Change Impacts"
+        ]
+    },
+    {
+        "title": "Call Her Daddy",
+        "description": "Discussões sobre relacionamentos e vida moderna.",
+        "image": "/assets/callherdaddy.jpg",
+        "episodes": [
+            "Toxic Relationships", 
+            "Flirting Tips", 
+            "Building Confidence"
+        ]
+    },
+    {
+        "title": "TED Talks Daily",
+        "description": "Ideias inspiradoras e inovadoras para seu dia.",
+        "image": "/assets/tedtalksdaily.jpg",
+        "episodes": [
+            "Why Failure is Essential", 
+            "How to Learn Faster", 
+            "The Future of Artificial Intelligence"
+        ]
+    }
+]

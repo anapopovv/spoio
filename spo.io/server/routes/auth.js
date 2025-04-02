@@ -3,75 +3,81 @@ const express = require('express');
 const router = express.Router();
 const axios = require('axios');
 
-const CLIENT_ID = process.env.CLIENT_ID;
-const CLIENT_SECRET = process.env.CLIENT_SECRET;
-const REDIRECT_URI = process.env.REDIRECT_URI;
+const { CLIENT_ID, CLIENT_SECRET, REDIRECT_URI } = process.env;
 
 if (!CLIENT_ID || !CLIENT_SECRET || !REDIRECT_URI) {
-    throw new Error('As variáveis de ambiente CLIENT_ID, CLIENT_SECRET e REDIRECT_URI devem estar configuradas.');
+    throw new Error('Erro: CLIENT_ID, CLIENT_SECRET e REDIRECT_URI devem estar definidos no .env');
+}
+
+function isAuthenticated(req, res, next) {
+    if (!req.session.spotify_token) {
+        return res.redirect('/login');
+    }
+    next();
 }
 
 router.get('/config', (req, res) => {
-    res.json({
-        CLIENT_ID: process.env.CLIENT_ID,
-        REDIRECT_URI: process.env.REDIRECT_URI,
-    });
+    res.json({ CLIENT_ID, REDIRECT_URI });
 });
 
 router.get('/login', (req, res) => {
-    const scopes = 'user-read-private user-read-email';
+    const scopes = 'user-read-private user-read-email user-top-read user-read-recently-played';
     const authUrl = `https://accounts.spotify.com/authorize?response_type=code&client_id=${CLIENT_ID}&scope=${encodeURIComponent(scopes)}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}&show_dialog=true`;
     res.redirect(authUrl);
 });
 
 router.get('/callback', async (req, res) => {
     const code = req.query.code;
-    console.log('Código recebido:', code);
 
     if (!code) {
-        console.error('Código de autorização não fornecido');
-        return res.status(400).send('Código de autorização não fornecido');
+        console.error('Código de autorização não fornecido.');
+        return res.status(400).send('Código de autorização não fornecido.');
     }
 
-    const authOptions = {
-        method: 'POST',
-        url: 'https://accounts.spotify.com/api/token',
-        headers: {
-            'Authorization': 'Basic ' + Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64'),
-            'Content-Type': 'application/x-www-form-urlencoded'
-        },
-        data: `grant_type=authorization_code&code=${code}&redirect_uri=${encodeURIComponent(REDIRECT_URI)}`
-    };
-
     try {
-        const response = await axios(authOptions);
-        const accessToken = response.data.access_token;
-        console.log('Token de acesso recebido:', accessToken);
 
-        const userOptions = {
-            method: 'GET',
-            url: 'https://api.spotify.com/v1/me',
+        const tokenResponse = await axios.post('https://accounts.spotify.com/api/token', new URLSearchParams({
+            grant_type: 'authorization_code',
+            code,
+            redirect_uri: REDIRECT_URI
+        }), {
             headers: {
-                'Authorization': `Bearer ${accessToken}`
+                Authorization: `Basic ${Buffer.from(`${CLIENT_ID}:${CLIENT_SECRET}`).toString('base64')}`,
+                'Content-Type': 'application/x-www-form-urlencoded'
             }
-        };
-        const userResponse = await axios(userOptions);
-        console.log('Dados do usuário:', JSON.stringify(userResponse.data, null, 2));
+        });
+
+        const accessToken = tokenResponse.data.access_token;
+        req.session.spotify_token = accessToken; 
+
+        const userResponse = await axios.get('https://api.spotify.com/v1/me', {
+            headers: { Authorization: `Bearer ${accessToken}` }
+        });
 
         const userName = userResponse.data.display_name || 'Usuário';
         const userImage = userResponse.data.images?.[0]?.url || '';
-        console.log('Nome do usuário:', userName);
-        console.log('Imagem do usuário:', userImage);
+        const followers = userResponse.data.followers?.total || 0;
 
-        res.redirect(`/home?access_token=${encodeURIComponent(accessToken)}&user_name=${encodeURIComponent(userName)}&user_image=${encodeURIComponent(userImage)}`);
+        res.redirect(`/home?access_token=${encodeURIComponent(accessToken)}&user_name=${encodeURIComponent(userName)}&user_image=${encodeURIComponent(userImage)}&followers=${followers}`);
+    
     } catch (error) {
-        if (error.response && error.response.status === 401) {
-            console.error('Token inválido ou expirado. Necessário autenticar novamente.');
-        } else {
-            console.error('Erro ao obter dados do usuário:', error.response ? error.response.data : error.message);
-        }
-        res.status(500).send('Erro ao obter os dados do usuário');
+        console.error('Erro no callback:', error.response?.data || error.message);
+        res.status(500).send('Erro ao processar autenticação.');
     }
+});
+
+router.get('/home', isAuthenticated, (req, res) => {
+    res.render('home');
+});
+
+router.get('/logout', (req, res) => {
+    req.session.destroy(err => {
+        if (err) {
+            return res.status(500).send('Erro ao tentar fazer logout.');
+        }
+        res.clearCookie('spotify_token'); 
+        res.redirect('/login');
+    });
 });
 
 module.exports = router;
